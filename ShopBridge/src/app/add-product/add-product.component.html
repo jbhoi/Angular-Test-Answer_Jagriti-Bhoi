@@ -7,6 +7,23 @@
       novalidate
       (ngSubmit)="save()"
     >
+
+    <div class="row"  *ngIf="showMsg == true">
+      <div class="col-xs-12">
+        <p class="alert alert-success">
+            <strong>Added or updated product successfully!</strong> 
+
+        </p>
+      </div>
+    </div>
+    <div class="row"  *ngIf="showMsg == false">
+      <div class="col-xs-12">
+        <p class="alert alert-danger">
+            <strong>Error occured</strong> 
+
+        </p>
+      </div>
+    </div>
       <h2>Add or edit a Product</h2>
 
       <div class="form-group" [hidden]="!addNewProduct.get('id')?.value">

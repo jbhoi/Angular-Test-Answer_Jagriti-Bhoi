@@ -25,7 +25,10 @@ export class ProductComponent implements OnInit {
       this.collectionSize = data.length;
       console.log(data);
       this.refreshCountries();
-    });
+    },
+    err => {
+      console.log("Error caught at getProductData Subscriber " + err);
+    },);
   }
 
   refreshCountries() {

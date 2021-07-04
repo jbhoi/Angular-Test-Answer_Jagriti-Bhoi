@@ -17,7 +17,10 @@ export class ViewProductComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
       this.products = JSON.parse(params.viewData);
-    });
+    },
+    err => {
+      console.log("Error occured while fetching data from activatedRoute" + err);
+    },);
   }
 
   editProduct() {

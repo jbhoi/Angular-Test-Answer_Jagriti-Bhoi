@@ -34,7 +34,10 @@ export class DeleteProductComponent implements OnInit {
   confirmDelete(id: number) {
     this.service.deleteProduct(id).subscribe((response) => {
       this.activeModal.dismiss(true);
-    });
+    },
+    err => {
+      console.log("Error occured while deleting a product " + err);
+    },);
   }
 }
 

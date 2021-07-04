@@ -13,6 +13,7 @@ import { ProductService } from '../product/product.service';
 })
 export class AddProductComponent implements OnInit {
   isSaving: boolean = false;
+  showMsg: boolean;
   addNewProduct = this.fb.group({
     id: [],
     name: [null, [Validators.required, Validators.maxLength(100)]],
@@ -32,7 +33,10 @@ export class AddProductComponent implements OnInit {
       console.log('res', params, JSON.parse(params.editData));
 
       this.updateForm(JSON.parse(params.editData));
-    });
+    },
+    err => {
+      console.log("Error occured while fetching data from queryparams " + err);
+    },);
   }
 
   save() {
@@ -83,11 +87,13 @@ export class AddProductComponent implements OnInit {
   }
 
   protected onSaveSuccess() {
+    this.showMsg = true;
     this.isSaving = false;
     this.previousState();
   }
 
   protected onSaveError() {
+    this.showMsg = false;
     this.isSaving = false;
   }
 
