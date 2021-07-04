@@ -1,32 +1,25 @@
 {
   "products": [
     {
-      "id": 2,
+      "id": 1,
       "name": "Sweet  stawberry",
       "type": "fruit",
       "description": "Sweet fresh stawberry ",
       "price": "100.34"
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Asparagus",
       "type": "vegetable",
       "description": "Asparagus with ham on the wooden table",
       "price": 18.95
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "Lettuce",
       "type": "vegetables",
       "description": "leafy vegetables",
       "price": "40.45"
-    },
-    {
-      "id": 6,
-      "name": "New Product",
-      "type": "vegetables",
-      "description": "product",
-      "price": "50"
     }
   ]
 }
